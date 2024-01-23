@@ -1,8 +1,9 @@
 import { useState } from "react"
+import confetti from "canvas-confetti";
 
 const TURNS = {
   X: 'x',
-  O: 'o'
+  O: 'O'
 }
 
 const Square = ({children, isSelected, updateBoard, index}) =>{
@@ -92,6 +93,7 @@ function App() {
     // Revisamos si hay un ganador
     const newWinner = checkWinner(newBoard)
     if(newWinner){
+      confetti()
     setWinner(newWinner)
     } else if (checkEndGame(newBoard)){
       setWinner(false) //Empate

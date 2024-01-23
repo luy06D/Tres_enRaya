@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #272727;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,16 +36,16 @@ body {
 }
 
 .board h1 {
-  color: #eee;
-  margin-bottom: 16px;
+  color: #ffffff;
+  margin-bottom: 50px;
 }
 
 .board button {
   padding: 8px 12px;
   margin: 25px;
   background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   width: 100px;
   border-radius: 5px;
   transition: 0.2s;
@@ -54,7 +54,7 @@ body {
 }
 
 .board button:hover {
-  background: #eee;
+  background: #fdfdfd;
   color: #222;
 }
 
@@ -79,11 +79,12 @@ body {
   height: 70px;
   pointer-events: none;
   border-color: transparent;
+  margin-top: 10px;
 }
 
 .square.is-selected {
   color: #fff;
-  background: #09f;
+  background: rgb(12, 158, 255);
 }
 
 .winner {
@@ -122,7 +123,7 @@ body {
 .square {
   width: 100px;
   height: 100px;
-  border: 2px solid #eee; 
+  border: 2px solid #ffffff; 
   border-radius: 5px;
   display: grid;
   place-items: center;
