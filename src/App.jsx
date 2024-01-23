@@ -1,8 +1,9 @@
 import { useState } from "react"
 import confetti from "canvas-confetti";
 
+
 const TURNS = {
-  X: 'x',
+  X: 'X',
   O: 'O'
 }
 
@@ -93,7 +94,10 @@ function App() {
     // Revisamos si hay un ganador
     const newWinner = checkWinner(newBoard)
     if(newWinner){
-      confetti()
+      confetti({
+        particleCount: 350,
+        spread: 180
+      });
     setWinner(newWinner)
     } else if (checkEndGame(newBoard)){
       setWinner(false) //Empate
