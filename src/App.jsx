@@ -1,36 +1,7 @@
 import { useState } from "react"
 import confetti from "canvas-confetti";
-
-
-const TURNS = {
-  X: 'X',
-  O: 'O'
-}
-
-const Square = ({children, isSelected, updateBoard, index}) =>{
-
-  const className = `square ${isSelected ? 'is-selected' : ''}`;
-  const handleClick  = () => {
-    updateBoard(index)
-  }
-  return (
-    <div onClick={handleClick} className={className}>
-      {children}
-    </div>
-  )
-}
-
-const WINNER_COMBOS = [
-  [0, 1 ,2 ],
-  [3, 4 ,5 ],
-  [6, 7 ,8 ],
-  [0, 3 ,6 ],
-  [1, 4 ,7 ],
-  [2, 5 ,8 ],
-  [0, 4 ,8 ],
-  [2, 4 ,6 ]
-]
-
+import { Square } from "./components/Square";
+import { TURNS, WINNER_COMBOS } from "./constans";
 
 function App() {
   // Creamos un array con 9 elementos
@@ -105,8 +76,9 @@ function App() {
   }
 
   return (
-    <main className="board">
+    <main className="board">    
       <h1>TRES EN RAYA</h1>
+      <button className="btnReset" onClick={resetGame}>Empezar de nuevo</button>
       <section className="game">
         {
           board.map((_ ,index) =>{
